@@ -1,0 +1,77 @@
+<html>
+<head>
+<style>
+body{
+background-color:#181818;
+}
+table{
+position:absolute;
+top:0px;
+left:300px;
+color:red;
+}
+div{
+height:20px;
+width:20px;
+background-color:#ffcc00;
+border-radius:8px;
+box-shadow: 20px 0px 70px #ffffcc;
+}
+#area{
+width:100%;
+height:730;
+}
+section{
+box-shadow:5px 3px 100px #808080;
+}
+</style>
+<script src="jquery-3.3.1.js"></script>
+<script>
+function anim()
+{
+var a=Number(document.getElementById("num1").value);
+
+if(a==7)
+{
+$(document).ready(function(){ 
+  $("#area").mousemove(function(event){
+   $("div").animate({left:event.pageX, top:event.pageY},"fast","swing");
+ });
+  $("#area").mousemove(function(){
+   $("section").animate({opacity:'0'});
+ });
+});
+}
+else
+{document.write("<center>Wrong...No Animation...</center>");}
+}
+</script>
+</head>
+<body>
+<div style="position:absolute; top:35px; left:55px;"></div>
+<div style="position:absolute; top:185px; left:905px;"></div>
+<div style="position:absolute; top:185px; left:155px;"></div>
+<div style="position:absolute; top:385px; left:255px;"></div>
+<div style="position:absolute; top:385px; left:805px;"></div>
+<div style="position:absolute; top:35px; left:1005px;"></div>
+<div style="position:absolute; top:485px; left:535px;"></div>
+
+<section style="border-radius:3px; background-color:gainsboro; height:100px; width:30px; position:absolute; top:50px; left:50px;"></section>
+<section style="border-radius:3px; background-color:gainsboro; height:100px; width:30px; position:absolute; top:50px; left:1000px;"></section>
+<section style="border-radius:3px; background-color:gainsboro; height:100px; width:30px; position:absolute; top:200px; left:150px;"></section>
+<section style="border-radius:3px; background-color:gainsboro; height:100px; width:30px; position:absolute; top:200px; left:900px;"></section>
+<section style="border-radius:3px; background-color:gainsboro; height:100px; width:30px; position:absolute; top:400px; left:250px;"></section>
+<section style="border-radius:3px; background-color:gainsboro; height:100px; width:30px; position:absolute; top:400px; left:800px;"></section>
+<section style="border-radius:3px; background-color:gainsboro; height:100px; width:30px; position:absolute; top:500px; left:530px;"></section>
+<section id="area" style="color:red; text-align:right;">
+For animation move the cursor.
+<center>
+<table>
+<tr><td><h1>Follow me!</h1><h1>Try !t</h1></td></tr>
+<tr><td>How many candles are there?</td><td><input type="text" id="num1"/></td></tr>
+<tr><td></td><td><input type="submit" id="btn" value="Animate" onclick="anim()"/></td></tr>
+</table>
+</center>
+</section>
+</body>
+</html>
